@@ -1,0 +1,3993 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+========================================================================== */
+
+
+/* -----------------------------------------------
+BASIC SETUP
+----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-style: normal;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* -----------------------------------------------
+SECTION: MAIN
+----------------------------------------------- */
+
+
+/*Top level parent container that holds the entire content for each page*/
+
+.main-content {
+    background-color: #e9e9e9;
+    padding-top: 50px;
+    overflow: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select,
+a {
+    outline: none;
+}
+
+a,
+a:link {
+    text-decoration: none;
+}
+
+
+/* -----------------------------------------------
+REUSABLE COMPONENTS | RES: 320px/MOBILE
+----------------------------------------------- */
+
+.row {
+    max-width: 1200px;
+    width: 96%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    width: 96%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+
+/*Wrapper for the meta data underneath the main news headline wrapper*/
+
+.display-name,
+.cat-tag,
+.pub-date {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+/*Wrapper for the author*/
+
+.authors {
+    padding: 5px 0;
+}
+
+
+/*author*/
+
+.display-name {
+    color: #fff;
+}
+
+
+/*Wrapper for the category tag*/
+
+.cat-tag {
+    color: #fff;
+}
+
+
+/*Wrapper for the publish date*/
+
+.pub-date {
+    color: #aaa;
+}
+
+
+/*inserts a forward slash before the pub date*/
+
+.pub-date:before {
+    display: inline-block;
+    content: "/";
+    margin: 0 5px;
+}
+
+
+/* ----END OF ALL CHANGES FOR THE REUSABLE COMPONENTS SECTION----*/
+
+
+/* -----------------------------------------------
+STAPLE COMPONENTS
+----------------------------------------------- */
+
+
+/* -----------------------------------------------
+SECTION: LOGO & NAVIGATION: 320px/MOBILE
+----------------------------------------------- */
+
+.navBar {
+    background-color: #000;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+}
+
+
+/*these values match what the container-fluid and row are set to*/
+
+.nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0;
+    align-items: center;
+}
+
+.site-logo {
+    width: 165px;
+    height: auto;
+    display: inline-block;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.label-toggle {
+    display: none;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.main-menu a {
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    text-decoration: none;
+}
+
+.main-menu a:hover {
+    color: orange;
+}
+
+.menu-social {
+    justify-content: flex-end;
+}
+
+.menu-social .fa {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+
+/*Media Query Changes*/
+
+@media only screen and (max-width: 768px) {
+    .nav-wrap {
+        flex-wrap: wrap;
+    }
+    .label-toggle {
+        display: block;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+    .label-toggle span {
+        position: relative;
+        top: 17px;
+        left: 5px
+    }
+    .label-toggle span:before,
+    .label-toggle span:after {
+        position: absolute;
+    }
+    .label-toggle span,
+    .label-toggle span:before,
+    .label-toggle span:after {
+        cursor: pointer;
+        height: 3px;
+        width: 30px;
+        background: #fff;
+        display: block;
+        content: '';
+        transition: all 0.4s;
+    }
+    .label-toggle span:before {
+        top: -8px;
+    }
+    .label-toggle span:after {
+        bottom: -8px;
+    }
+    #menu-toggle:checked~.label-toggle span {
+        background-color: transparent;
+    }
+    #menu-toggle:checked~.label-toggle span:before,
+    #menu-toggle:checked~.label-toggle span:after {
+        top: 0;
+    }
+    #menu-toggle:checked~.label-toggle span:before {
+        transform: rotate(45deg);
+    }
+    #menu-toggle:checked~.label-toggle span:after {
+        transform: translateY(-6px) rotate(-45deg);
+        top: 6px;
+    }
+    .main-menu {
+        display: block;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        text-align: center;
+        width: 100%;
+        transition: all 1s ease;
+    }
+    .main-menu a {
+        display: block;
+        font-size: 1.5em;
+        border-bottom: 1px solid white;
+        padding: 1em 0;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .main-menu a:hover {
+        color: orange;
+        border-bottom: 1px solid orange;
+    }
+    .menu-social {
+        display: flex;
+        justify-content: space-between;
+        max-width: 250px;
+        margin: 60px auto;
+    }
+    .menu-social a {
+        border-bottom: none;
+        border: 3px solid white;
+        border-radius: 80%;
+        font-size: 25px;
+        height: 60px;
+        width: 60px;
+    }
+    .menu-social .fa {
+        position: relative;
+        bottom: 16px;
+        margin-left: 0;
+    }
+    .menu-social a:hover {
+        border: 3px solid orange;
+        border-radius: 80%;
+        font-size: 25px;
+        height: 60px;
+        width: 60px;
+    }
+    #menu-toggle:checked~.main-menu {
+        opacity: 1;
+        height: 100vh;
+        visibility: visible;
+        margin-top: 100px;
+    }
+}
+
+
+/* END OF ALL CHANGES TO SECTION: LOGO & NAVIGATION */
+
+
+/* -----------------------------------------------
+SECTION: NEWSLETTER | RES: 320px/MOBILE
+----------------------------------------------- */
+
+
+/*PARENT Wrapping container for the Newsletter*/
+
+.newsletter {
+    background: url("../img/home-img/newsletter-bg.jpg");
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #222;
+}
+
+
+/*Inner PARENT Wrapping container for the Newsletter*/
+
+.newsletter-inner {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.newsletter-copy {
+    padding: 60px 0 40px;
+}
+
+.newsletter-heading {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 45px;
+    line-height: 45px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+    font-weight: 700;
+}
+
+.newsletter-subheading {
+    color: #fff;
+    font-weight: 400;
+    line-height: 145%;
+    font-size: 20px;
+}
+
+.newsletter-form {
+    margin-bottom: 40px;
+}
+
+/* -----------------------------------------------
+SECTION: NEWSLETTER | RES: 768px/TABLET
+----------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /*PARENT Wrapping container for the Newsletter*/
+    .newsletter {
+        padding: 50px 20px;
+    }
+
+    /*Inner PARENT Wrapping container for the Newsletter*/
+    .newsletter-inner {
+        max-width: 75%;
+    }
+
+}
+
+
+/* -----------------------------------------------
+SECTION: NEWSLETTER | RES: 960px/DESKTOP
+----------------------------------------------- */
+
+@media (min-width: 960px) {
+    
+    /*PARENT Wrapping container for the Newsletter*/
+    .newsletter {
+        padding: 70px 20px;
+    }
+
+    /*Inner PARENT Wrapping container for the Newsletter*/
+    .newsletter-inner {
+        max-width: 60%;
+    }
+    
+
+
+}
+
+
+
+
+/* -----------------------------------------------
+SECTION: FOOTER | RES: 320px/MOBILE
+----------------------------------------------- */
+
+
+/*Outer PARENT Wrapping container for the whole footer*/
+
+.footer-main {
+    background-color: #444;
+}
+
+
+/*Inner Parent wrapping container for all 3 bucket lists*/
+
+.footer-inner {
+    padding: 20px;
+}
+
+
+/*Individual Wrapping component - shared class*/
+
+.footer-bucket {
+    border-bottom: 1px #ccc solid;
+    padding: 30px 0;
+}
+
+
+/*Targets all the heading links for each bucket*/
+
+.footer-bucket a {
+    font-size: 16px;
+    color: white;
+}
+
+.footer-bucket:last-child {
+    border-bottom: none;
+}
+
+
+/*Targets all the title headings for each footer column*/
+
+.footer-inner h4 {
+    text-transform: uppercase;
+    background-color: white;
+    color: #2b2b2b;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+
+/*Targets the individual social channel rows*/
+
+.follow-us ul li {
+    padding: 3px 0;
+}
+
+
+/*adds some padding to the social text words*/
+
+span.social {
+    padding-left: 20px;
+}
+
+
+/* -----------------------------------------------
+SECTION: FOOTER | RES: 768px/TABLET
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*Outer PARENT Wrapping container for the whole footer*/
+    .footer-main {}
+    /*Inner Parent wrapping container for all 3 bucket lists*/
+    .footer-inner {
+        overflow: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*Individual Wrapping component - shared class*/
+    .footer-bucket {
+        border-bottom: none;
+    }
+}
+
+
+/* -----------------------------------------------------
+END OF TABLET CHANGES FOR SECTION: FOOTER
+--------------------------------------------------------*/
+
+
+/*DESKTOP CHANGES*/
+
+
+/* -----------------------------------------------
+SECTION: FOOTER | RES: 960px/DESKTOP
+-------------------------------------------------- */
+
+@media (min-width: 960px) {
+    /*Inner Parent wrapping container for all 3 bucket lists*/
+    .footer-inner {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+}
+
+
+/* -----------------------------------------------------
+END OF DESKTOP CHANGES FOR FOOTER SECTION
+--------------------------------------------------------*/
+
+
+/* -----------------------------------------------
+SECTION: FOOTER COPYRIGHT | RES: 320px/MOBILE
+----------------------------------------------- */
+
+
+/*Wrapping Parent Container for the copyright strip*/
+
+.copyright-info {
+    background-color: #222;
+    text-align: center;
+}
+
+
+/*Inner PARENT wrapping container for the copyright content*/
+
+.copyright-inner {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/*Micro Parent Container*/
+
+#footer-logo {
+    width: 25%;
+    margin: 20px auto 5px;
+    opacity: 0.6;
+}
+
+#footer-logo img {
+    width: auto;
+}
+
+
+/*Top Level Parent Component*/
+
+footer .copyright-info p {
+    padding-top: 15px;
+    color: white;
+}
+
+
+/* -----------------------------------------------------
+END OF MOBILE CHANGES FOR FOOTER COPYRIGHT
+--------------------------------------------------------*/
+
+
+/* -----------------------------------------------
+END OF ALL STAPLE COMPONENTS CHANGES
+----------------------------------------------- */
+
+
+/* -----------------------------------------------
+START OF THE INDIVIDUAL PAGE STYLES
+----------------------------------------------- */
+
+
+/*------------------------
+HOME PAGE
+-------------------------*/
+
+
+/* -----------------------------------------------
+PAGE: HOME | SECTION: NEWS HERO | RES: MOBILE (320px)
+----------------------------------------------- */
+
+
+/*wrapper for all 3 story cards*/
+
+.hero {
+    width: 100%;
+    padding: 50px 10px;
+    background-color: #eee;
+}
+
+.latest-hero {
+    background-color: #fff;
+}
+
+.overlay.home {display: none;}
+
+
+/*MAIN FEATURED NEWS STORY CARD*/
+
+
+/*Inner Wrapper for all the content inside the news card*/
+
+.featured-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+
+/*Wrapper for the news headline*/
+
+.featured-heading-wrap {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 20px 10px 0;
+}
+
+
+/*News headline styling*/
+
+.featured-heading-link {
+    color: #222;
+}
+
+
+/*News supporting text*/
+
+.abstract {
+    padding-bottom: 20px;
+    color: #222;
+}
+
+
+/*wrapper for the featured story meta*/
+
+.featured-story-meta {
+    padding-bottom: 20px;
+}
+
+
+/*article meta data*/
+
+
+/*author*/
+
+.featured-story-meta .display-name {
+    color: #222;
+}
+
+
+/*Wrapper for the category tag*/
+
+.featured-story-meta .cat-tag {
+    color: #222;
+}
+
+
+/*Wrapper for the publish date*/
+
+.featured-story-meta .pub-date {
+    color: #bbb;
+}
+
+
+/* --------------------------------------------------------
+PAGE: HOME | SECTION: NEWS CARDS 2 + 3 | RES: MOBILE (320px)
+--------------------------------------------------------- */
+
+.news-story-card {
+    margin: 3em 0 0;
+}
+
+
+/*Wrapper for all the news card text copy inside*/
+
+.article-details-wrap {
+    text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 230px;
+}
+
+
+/*Wrapper for card heading*/
+
+.news-card-heading-wrap {
+    font-size: 24px;
+    margin-bottom: 0px;
+    padding: 40px 10px 0;
+}
+
+
+/*Actual heading card link*/
+
+.news-card-title {
+    color: #222;
+}
+
+
+/*Wrapper for the meta data*/
+
+.article-meta-wrap {
+    padding-bottom: 20px;
+    color: #222;
+}
+
+.article-meta-wrap .display-name {
+    color: #222;
+}
+
+.article-meta-wrap .cat-tag {
+    color: #222;
+}
+
+.article-meta-wrap .pub-date {
+    color: #bbb;
+}
+
+
+/* -----------------------------------------------
+PAGE: HOME | SECTION: NEWS HERO | RES: 768px/TABLET
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 65px 0;
+    }
+    .hero-wrap {}
+    
+    .latest-hero {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .featured-img {
+        position: relative;
+        display: block;
+    }
+    .overlay.home {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .featured-content {
+        position: absolute;
+        bottom: 26%;
+        z-index: 2;
+    }
+    
+    .featured-heading-wrap {
+    padding: 20px 20px 0;
+    }
+    
+    
+    /*News headline styling*/
+    .featured-heading-link {
+        color: #fff;
+        font-size: 50px;
+        line-height: 55px;
+    }
+    /*article meta data*/
+    .featured-story-meta {
+        padding-bottom: 0;
+    }
+    /*author*/
+    .featured-story-meta .display-name {
+        color: #fff;
+        font-size: 20px;
+            font-weight: 400;
+    }
+    /*Wrapper for the category tag*/
+    .featured-story-meta .cat-tag {
+        color: #fff;
+        font-size: 16px;
+            font-weight: 400;
+    }
+    /*Wrapper for the publish date*/
+    .featured-story-meta .pub-date {
+        color: #fff;
+        font-size: 16px;
+            font-weight: 400;
+    }
+    /* -----------------------------------------------
+PAGE: HOME | SECTION: NEWS CARDS 2 & 3 | RES: 768px/TABLET
+-------------------------------------------------- */
+    .news-story-card {
+        float: left;
+        width: 48%;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .news-story-card:nth-of-type(2) {
+        margin-right: 4%;
+    }
+    .article-details-wrap {
+        height: 200px;
+    }
+    .news-card-heading-wrap {
+        font-size: 25px;
+        margin-bottom: 0;
+        padding-top: 25px;
+        height: 115px;
+    }
+    
+    .article-meta-wrap .display-name,
+    .article-meta-wrap .cat-tag,
+    .article-meta-wrap .pub-date {
+        font-size: 14px;
+    }
+}
+
+
+/* ------------------------------------------------------------
+END OF TABLET CHANGES FOR SECTION: NEWS CARDS 2 + 3
+---------------------------------------------------------------*/
+
+
+/* -------------------------------------------------------
+DESKTOP CHANGES
+-------------------------------------------------------- */
+
+
+/* -----------------------------------------------
+PAGE: HOME | SECTION: NEWS HERO | RES: 960px/DESKTOP
+-------------------------------------------------- */
+
+@media (min-width: 960px) {
+    
+    .hero {
+        padding: 65px 0 25px;
+    }
+    
+    .hero-wrap {
+        display: flex;
+        justify-content: space-between;
+        height: 285px;
+        overflow: hidden;
+    }
+    .latest-hero {
+        background-color: transparent;
+        flex: 3;
+    }
+    .featured-content {
+        bottom: 25%;
+    }
+   
+    .featured-heading-link {
+        color: #fff;
+        font-size: 36px;
+        line-height: 37px;
+    }
+    
+    /*author*/
+    .featured-story-meta .display-name {
+        font-size: 15px;
+    }
+    /*Wrapper for the category tag*/
+    .featured-story-meta .cat-tag {
+        font-size: 15px;
+    }
+    /*Wrapper for the publish date*/
+    .featured-story-meta .pub-date {
+        font-size: 15px;
+    }
+}
+
+
+/* -----------------------------------------------------
+END OF DESKTOP CHANGES FOR SECTION: NEWS HERO
+--------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+    
+    .hero {
+    padding: 65px 0 50px;
+    }
+    
+}
+
+
+
+
+
+/* --------------------------------------------------------
+PAGE: HOME | SECTION: NEWS CARDS 2 + 3 | RES: 960px/DESKTOP
+--------------------------------------------------------- */
+
+@media (min-width: 960px) {
+    .hero-wrap {
+        height: 400px;
+        overflow: hidden;
+    }
+    .news-story-card {
+        margin-top: 0;
+        margin-bottom: 0;
+        flex: 1;
+        margin-left: 20px;
+    }
+    
+    /*Wrapper for all the news card text copy inside*/
+    .article-details-wrap {
+        height: 231px;
+    }
+    
+    
+    .news-story-card:nth-of-type(2) {
+        margin-right: 0;
+    }
+    
+    .news-card-heading-wrap {
+        padding-top: 25px;
+        font-size: 25px;
+        line-height: 30px;
+        height: 170px;
+    }
+    
+    .article-meta-wrap .authors {
+        padding: 0;
+    }
+}
+
+/* --------------------------------------------------------
+PAGE: HOME | SECTION: NEWS CARDS 2 + 3 | RES: 1024px/DESKTOP
+--------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+    
+    /*Wrapper for all the news card text copy inside*/
+    .article-details-wrap {
+        height: 255px;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+END OF DESKTOP CHANGES FOR SECTION: NEWS CARDS 2 + 3
+--------------------------------------------------------*/
+
+
+/* --------------------------------------------------------
+PAGE: HOME | SECTION: NEWS-REVIEWS BLOCK | RES: MOBILE (320px)
+--------------------------------------------------------- */
+
+
+/*PARENT wrapping container for the whole news and reviews card*/
+
+.news-reviews-container {}
+
+
+/*inner section wrapper for the content*/
+
+.news-reviews-outer-wrap {
+    background-color: white;
+    padding: 0 0 20px;
+    margin: 0 0 50px;
+}
+
+
+/*wrapper for the header cap*/
+
+.news-reviews-header-wrap {
+    background-color: #222;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+
+/*header container settings*/
+
+.news-reviews-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    float: left;
+    font-weight: 400;
+    line-height: 3em;
+}
+
+
+/*actual heading link*/
+
+.news-reviews-heading-link {
+    color: #fff;
+}
+
+
+/******/
+
+
+/*container that wraps around the whole card*/
+
+.news-reviews-inner-container {
+    padding: 0 10px;
+}
+
+
+/*container that wraps around all the card content*/
+
+.news-review-card-group {
+    width: 100%;
+    padding-bottom: 20px;
+    overflow: auto;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*wrapper for the image thumb*/
+
+.card-image-wrap {
+    float: left;
+    width: 45%;
+    margin-top: 30px;
+}
+
+
+/*wrapper for the article details*/
+
+.card-details-wrap {
+    float: right;
+    width: 50%;
+}
+
+
+/*headline wrapper*/
+
+.card-title-wrap {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+/*actual headline link*/
+
+.card-title-link {
+    color: #2b2b2b;
+}
+
+
+/*card description text*/
+
+.news-review-card-group .abstract {
+    display: none;
+}
+
+
+/*card description text*/
+
+.news-review-card-group .display-name {
+    color: #2b2b2b;
+}
+
+
+/* -------------------------------------------------------
+PAGE: HOME | SECTION: NEWS-REVIEWS BLOCK | RES: 768px/TABLET
+-------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .news-reviews-outer-wrap {
+        clear: left;
+        margin: 30px 0 120px;
+    }
+    /*container that wraps around all the card content*/
+    .news-review-card-group {
+        padding: 20px;
+    }
+    .card-image-wrap {
+        float: left;
+        width: 40%;
+    }
+    .card-details-wrap {
+        float: right;
+        width: 55%;
+        margin-top: 5px;
+    }
+    .card-title-wrap {
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .news-review-card-group .abstract {
+        display: block;
+        color: #2b2b2b;
+        padding: 20px 0;
+        font-size: 17px;
+        line-height: 25px;
+    }
+    ul.author-publish li {
+        display: inline;
+    }
+}
+
+
+/* ------------------------------------------------------------
+END OF TABLET CHANGES FOR SECTION: NEWS-REVIEWS BLOCK
+---------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------
+PAGE: HOME | SECTION: NEWS-REVIEWS BLOCK | RES: 960px/DESKTOP
+-------------------------------------------------------------*/
+
+@media (min-width: 960px) {
+    .news-reviews-outer-wrap {
+        float: left;
+        width: 70%;
+    }
+}
+
+
+/* -----------------------------------------------------
+END OF DESKTOP CHANGES FOR SECTION: NEWS-REVIEWS BLOCK
+--------------------------------------------------------*/
+
+
+/*------------------------
+START OF NEWS PAGE
+-------------------------*/
+
+
+/* --------------------------------------------------
+PAGE: NEWS | SECTION: NEWS HERO | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+
+/*featured news hero container*/
+
+.featured-news-hero-block {
+    background-color: #222;
+    margin-bottom: 20px;
+    padding: 40px 0 20px;
+}
+
+.news-hero-details-wrap {
+    text-align: center;
+}
+
+.news-hero-details-wrap .featured-heading-wrap {
+    font-size: 31px;
+    line-height: 35px;
+    padding-top: 35px;
+}
+
+.news-hero-details-wrap .featured-heading-link {
+    color: #fff;
+}
+
+.news-hero-details-wrap .abstract {
+    color: #fff;
+}
+
+.news-hero-details-wrap .cat-tag {
+    color: #fff;
+}
+
+.news-hero-details-wrap .display-name {
+    color: #fff;
+}
+
+
+/* --------------------------------------------------
+PAGE: NEWS | SECTION: NEWS HERO | RES: TABLET (768px)
+--------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*featured news hero PARENT container*/
+    .featured-news-hero-block {
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        overflow: auto;
+    }
+    .hero-image {
+        float: left;
+        width: 45%;
+        padding-top: 40px;
+        padding-right: 10px;
+    }
+    .news-hero-details-wrap {
+        float: left;
+        width: 55%;
+        padding-left: 20px;
+        text-align: left;
+    }
+    .news-hero-details-wrap .featured-heading-wrap {
+        padding-left: 0;
+    }
+    .news-hero-details-wrap .featured-heading-link {
+        font-size: 33px;
+        line-height: 26px;
+    }
+    .news-hero-details-wrap .authors {
+        display: inline;
+        padding-left: 20px;
+    }
+}
+
+
+/* --------------------------------------------------
+PAGE: NEWS | SECTION: NEWS HERO | RES: DESKTOP (940px)
+--------------------------------------------------- */
+
+@media (min-width: 940px) {
+    .featured-news-hero-block {
+        padding: 20px 0 60px;
+    }
+}
+
+
+/* --------------------------------------------------
+PAGE: NEWS | SECTION: NEWS HERO | RES: DESKTOP (1200px)
+--------------------------------------------------- */
+
+@media (min-width: 1200px) {
+    .news-hero-details-wrap {
+        max-width: 550px;
+        padding-left: 60px;
+        padding-top: 50px;
+    }
+    .news-article-details-wrap .news-card-meta {
+        padding: 0 63px;
+    }
+}
+
+
+/* --------------------------------------------------
+PAGE: NEWS | SECTION: NEWS CARDS | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+
+/*news card container*/
+
+.news-card-row-container {
+    margin: 20px 0;
+}
+
+
+/*wrapping micro container for each news card*/
+
+.news-card {
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+/*bottom half wrapping container for each card*/
+
+.news-article-details-wrap {
+    background-color: #fff;
+    text-align: center;
+}
+
+
+/*wrapping container for the headline inside each card*/
+
+.news-card-title-link {
+    padding: 25px 20px 20px;
+    line-height: 28px;
+}
+
+
+/*heading link inside each card*/
+
+.news-card-title-link a {
+    color: #2b2b2b;
+}
+
+
+/*wrapper for the cat tag and post times*/
+
+.news-card-meta {
+    padding: 0 15px 30px;
+    text-align: center;
+}
+
+
+/*styles the cat tags but only inside the news cards*/
+
+.news-card-meta .cat-tag {
+    color: #2b2b2b;
+}
+
+
+/*--------------------------------------------------
+PAGE: NEWS | SECTION: NEWS CARDS | RES: TABLET (768px)
+--------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .news-card-row-wrap {
+        padding: 50px 0;
+    }
+    /*news card container*/
+    .news-card-row-container {
+        margin: 0;
+    }
+    /*wrapping micro container for each news card*/
+    .news-card {
+        width: 50%;
+        float: left;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    .news-card-row-wrap .news-article-details-wrap {
+        height: 190px;
+        position: relative;
+    }
+    .news-article-details-wrap .news-card-title-link {
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .news-article-details-wrap .news-card-meta {
+        position: absolute;
+        bottom: 30px;
+        padding: 0 87px;
+    }
+    .main-focal-wrap {
+        float: left;
+        width: 50%;
+        margin-top: 30px;
+        margin-right: 40px;
+    }
+    .aside-news-articles {
+        float: left;
+        width: 44%;
+    }
+    article.story-block {
+        border-top: none;
+        border-bottom: 1px #bbb solid;
+        padding: 0 0 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* END OF TABLET CHANGES*/
+
+
+/*--------------------------------------------------
+PAGE: NEWS | SECTION: NEWS CARDS | RES: DESKTOP (960px)
+--------------------------------------------------- */
+
+@media (min-width: 960px) {
+    .news-hero-details-wrap .featured-heading-wrap {
+        font-size: 45px;
+    }
+    /*wrapping micro container for each news card*/
+    .news-card {
+        width: 25%;
+        float: left;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .news-article-details-wrap .news-card-title-link {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+    }
+    .news-article-details-wrap .news-card-meta {
+        position: absolute;
+        bottom: 20px;
+        padding: 0 38px;
+    }
+}
+
+
+/*--------------------------------------------------
+PAGE: NEWS | SECTION: NEWS CARDS | RES: TABLET (1200px)
+--------------------------------------------------- */
+
+@media (min-width: 1200px) {
+    .news-article-details-wrap .news-card-title-link {
+        padding-top: 35px;
+    }
+    .news-article-details-wrap .news-card-meta {
+        padding: 0 63px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+PAGE: NEWS | SECTION: FOCAL SECTION| RES: MOBILE (320px)
+---------------------------------------------------------- */
+
+
+/*Parent wrapping container*/
+
+.featured-news-break {
+    background-color: #d0d0d0;
+    padding: 30px 0 30px;
+}
+
+
+/* --------main focal article ------*/
+
+.focal-details-wrap {
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+/*targets the focal article headline*/
+
+.focal-card-title-link {
+    margin: 15px 0 10px;
+    font-size: 22px;
+}
+
+.focal-card-title-link a {
+    color: #2b2b2b;
+}
+
+
+/*targets the meta data for the focal article*/
+
+.news-card-meta.focal-meta {
+    padding-left: 0;
+}
+
+.news-card-meta.focal-meta .pub-date {
+    color: #777777;
+    padding-left: 0;
+}
+
+
+/* --------focal aside articles ------*/
+
+
+/*wrapper for each aside article*/
+
+article.story-block {
+    border-top: 1px #bbb solid;
+    padding: 30px 0;
+}
+
+
+/*wrapper for the image*/
+
+.story-block-figure {
+    float: left;
+    width: 45%;
+    margin-top: 5px;
+    margin-right: 14px;
+}
+
+
+/*wrapper for the headline*/
+
+.story-block-content {
+    float: left;
+    width: 50%;
+}
+
+
+/*targets the article headline*/
+
+.story-block-title {
+    font-size: 18px;
+    color: #2b2b2b;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+.story-block-content .cat-tag {
+    color: #2b2b2b;
+}
+
+.story-block-content .pub-date {
+    color: #777777;
+}
+
+
+/* ---------------------------------------------------------
+PAGE: NEWS | SECTION: FOCAL SECTION | RES: TABLET (768px)
+---------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*Parent wrapping container*/
+    .featured-news-break {
+        margin-bottom: 30px;
+    }
+    .focal-details-wrap {
+        padding: 0;
+    }
+    .focal-card-title-link {
+        font-size: 30px;
+    }
+    .aside-news-articles {
+        margin-top: 20px;
+    }
+    article.story-block {
+        border: none;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    .story-block-content {
+        max-width: 170px;
+    }
+    .story-block-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+/* ---------------------------------------------------------
+PAGE: NEWS | SECTION: FOCAL SECTION | RES: DESKTOP (960px)
+---------------------------------------------------------- */
+
+@media (min-width: 960px) {
+    
+    .story-block-content {
+    max-width: 200px;
+    }
+}
+
+
+/*------------------------
+START OF NEWS DETAIL PAGE
+-------------------------*/
+
+
+/* --------------------------------------------------
+PAGE: NEWS ARTICLE | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+.news-detail {
+    width: 100%;
+    /*padding: 0 10px;*/
+}
+
+.article-wrapper {
+    width: 100%;
+}
+
+
+/*share icon (top right corner of header)*/
+
+.fa-share-square {
+    color: black;
+}
+
+
+/****** Start of the News Article *****/
+
+.news-article-content h1 {
+    color: #2b2b2b;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 12px;
+    font-size: 35px;
+}
+
+.news-article-content h2 {
+    color: black;
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 20px;
+}
+
+
+/********/
+
+
+/*PARENT container for the news article image*/
+
+.news-visual-wrappper {}
+
+.news-visual-header {
+    margin-top: 20px;
+    
+    /*
+    padding-left: 10px;
+    padding-right: 10px;
+    */
+}
+
+
+/*figcaption*/
+
+.caption {
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/********/
+
+
+/*PARENT container for the article meta*/
+
+.article-meta {
+    padding: 25px 0;
+}
+
+.article-meta h1.section-title {
+    display: none;
+}
+
+
+/******************************/
+
+
+/*Level 3 Micro Container*/
+
+.content-area {
+    width: 100%;
+}
+
+
+/*Level 3 Micro Component*/
+
+.content-area p {
+    line-height: 1.875em;
+}
+
+
+/*Level 3 Micro Component*/
+
+.contents-img {
+    width: 100%;
+    margin: 2em 0;
+}
+
+
+/*Level 3 Micro Component*/
+
+.content-area p {
+    margin-bottom: 2em;
+}
+
+
+/* -----------------------------------------------
+SIDEBAR / ASIDE STYLES
+----------------------------------------------- */
+
+
+/*Parent Container*/
+
+aside.latest-related {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+aside.latest-related section {
+    padding-bottom: 20px;
+}
+
+aside.latest-related h3 {
+    margin-bottom: 5px;
+}
+
+
+/*Level 1 Micro Container*/
+
+.in-this-story {
+    width: 100%;
+    padding: 30px 0 10px;
+}
+
+.latest-related a {
+    color: #2b2b2b;
+    padding-bottom: 0px;
+    border-bottom: 1px #8F8F8F solid;
+}
+
+
+/*Level 1 Micro Container*/
+
+.tags {
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/*Level 1 Micro Container*/
+
+.related {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.related li {
+    margin-bottom: 1em;
+}
+
+.related a {
+    line-height: 28px;
+}
+
+
+/* --------------------------------------------------
+PAGE: NEWS DETAIL | RES: TABLET/768px
+----------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*Targets the 3 individual PARENT containers for the
+news headline wrapper, image wrapper, and article content*/
+    .news-article-content header,
+    .news-visual-wrappper,
+    .content-area {
+        float: right;
+        width: 75%;
+        position: relative;
+        margin-left: 170px;
+    }
+    /*wrapping PARENT container for the whole article*/
+    .news-article-content {
+        position: relative;
+        overflow: auto;
+        padding-bottom: 50px;
+    }
+    /*wrapping PARENT container for the headline & sub headline*/
+    .news-article-content header {
+        padding: 10px 0 20px;
+    }
+    /*wrapping PARENT container for the article body copy*/
+    .news-article-content .content-area {
+        padding-top: 30px;
+    }
+    /*Targets the meta wrapper block*/
+    .news-article-content .article-meta {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    .article-meta h1.section-title {
+        display: block;
+    }
+    /******************************/
+    /*PARENT container for all the aside information*/
+    aside.latest-related {
+        background-color: #fff;
+        overflow: auto;
+    }
+    .latest-related-wrap {
+        display: flex;
+    }
+    .latest-related-wrap section {
+        flex: 1;
+    }
+    .tags,
+    .related {
+        padding-top: 30px;
+    }
+}
+
+
+/* -----------------------------------------------
+PAGE: NEWS DETAIL PAGE STYLES | RES: DESKTOP
+----------------------------------------------- */
+
+@media (min-width: 940px) {
+    /*Targets the 3 individual PARENT containers for the
+    news headline wrapper, image wrapper, and article content*/
+    .news-article-content header,
+    .news-visual-wrappper,
+    .content-area {
+        padding-right: 200px;
+    }
+    .latest-related-wrap section {
+        border-left: 1px solid #ccc;
+        margin-top: 30px;
+        padding-top: 0;
+    }
+    .latest-related-wrap .in-this-story {
+        border-left: none;
+    }
+    .in-this-story,
+    .tags {
+        flex: 1;
+    }
+    .latest-related-wrap section.tags {
+        padding-left: 30px;
+    }
+    .latest-related-wrap section.related {
+        flex: 2;
+        padding-left: 30px;
+    }
+}
+
+
+/*------------------------
+START OF REVIEWS PAGE
+-------------------------*/
+
+
+/* -----------------------------------------------
+PAGE: REVIEWS | RES: MOBILE (320px)
+-----------------------------------------------*/
+
+
+/*REVIEW FILTER NAV*/
+
+
+/*Parent Container*/
+
+.navbar-container {
+    margin: 0;
+    padding: 10px 0;
+    background-color: transparent;
+    overflow: auto;
+    border-bottom: 1px solid #bbb;
+}
+
+
+/*Level 1 Micro Container - wrapper for the actual button and its contents*/
+
+.dropdown {
+    float: right;
+}
+
+
+/*Level 2 Micro Container - dropdown button*/
+
+.dropbtn {
+    color: #2b2b2b;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*Level 3 Micro Container - container for the dropdown links*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 134px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+.show {
+    display: block;
+}
+
+
+/*Level 3 Micro Component - dropdown list links*/
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+/****************************************/
+
+
+/*REVIEW FILTER RESULTS*/
+
+
+/****************************************/
+
+
+/*PARENT Wrapping Container for all of the review cards*/
+
+.reviews-contents {
+    width: 100%;
+    padding: 25px 0 80px;
+}
+
+
+/*L1 Micro Child Component*/
+
+.review-collection-fragment h1.page-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    color: #1a1a1a;
+}
+
+
+/***********************************/
+
+
+/*Level 1 PARENT Container*/
+
+.fragment-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review {
+    width: 160px;
+    /*
+    padding-left: 15px;
+    padding-right: 15px;
+*/
+/*    margin-bottom: 30px;*/
+    text-align: center;
+}
+
+.album-link {
+    display: block;
+    color: #2b2b2b;
+}
+
+.artwork {
+    margin-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.album-artist {
+    height: 80px;
+    width: 100px;
+    margin: 10px auto;
+}
+
+.artist-list {
+    font-size: 17px;
+    color: #2b2b2b;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+h2.album-name {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: italic;
+    color: #2b2b2b;
+    word-wrap: break-word;
+}
+
+
+/**************/
+
+.meta {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.review .display-name {
+    color: #2b2b2b;
+}
+
+.review .pub-date {
+    color: #919191;
+}
+
+
+/* -----------------------------------------------
+REVIEW PAGE STYLES | RES: TABLET/768px
+----------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*REVIEW FILTER NAV*/
+    /*PARENT Container*/
+    .navbar-container {
+        margin-top: 30px;
+    }
+    .review-collection-fragment h1.page-title {
+        font-size: 25px;
+        margin: 10px 0 60px;
+    }
+    /****************************************/
+    /*REVIEW FILTER RESULTS*/
+    /****************************************/
+    /*PARENT Container for each of the review cards*/
+    .review {
+        width: 255px;
+    }
+    .album-artist {
+        width: auto;
+        margin-top: 20px;
+        height: 55px;
+    }
+    .artist-list {
+        font-size: 19px;
+    }
+    h2.album-name {
+        font-size: 18px;
+    }
+}
+
+
+/* -----------------------------------------------
+REVIEW PAGE STYLES | RES: DESKTOP/940px
+----------------------------------------------- */
+
+@media (min-width: 960px) {
+    .fragment-list {
+        padding: 0 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: flex;
+    }
+    /*PARENT Container for the review cards*/
+    .review {
+        width: 150px;
+    }
+    
+    .reviews-contents {
+    width: 100%;
+/*    padding-bottom: 120px;*/
+    }
+    
+    .album-artist {
+        margin-top: 12px;
+    }
+    .artist-list {
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    h2.album-name {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .review .meta {
+        margin-top: 30px;
+    }
+    
+
+}
+
+
+/* -----------------------------------------------
+REVIEW PAGE STYLES | RES: DESKTOP/1200px
+----------------------------------------------- */
+
+@media (min-width: 1200px) {
+    /*PARENT Container for the review cards*/
+    .review {
+        width: 190px;
+    }
+    .album-artist {
+        margin-top: 20px;
+    }
+    .review .meta {
+        margin-top: 0;
+    }
+}
+
+
+/* -----------------------------------------------
+PAGE: REVIEWS DETAIL PAGE | RES: MOBILE (320px)
+-----------------------------------------------*/
+
+
+/*Parent Container*/
+
+.review-detail {
+    width: 100%;
+    /*background-color: aqua;*/
+}
+
+
+/******* Level 1 *********/
+
+
+/*Micro L1 Container*/
+
+.article-wrapper {
+    background-color: #fff;
+}
+
+
+/******* Level 2 *********/
+
+
+/*Micro L2 PARENT Container*/
+
+.mobile-header {
+    position: relative;
+    padding: 10px 0 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+
+/*Micro L2 Component*/
+
+.mobile-header h1 a,
+h1.section-title a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #2b2b2b;
+}
+
+
+/*Micro L2 Component*/
+
+.share-icon {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+
+/******* Level 2 *********/
+
+
+/*Micro L2 PARENT Container*/
+
+.album-tombstone {}
+
+
+/******* Level 3 *********/
+
+
+/*Micro L3 Container*/
+
+hgroup {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/*Micro L3 Component*/
+
+h2.label {
+    font-weight: 700;
+    font-size: 35px;
+}
+
+
+/*Micro L3 Component*/
+
+h1.album-name {
+    font-weight: 400;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+
+/******* Level 3 *********/
+
+
+/*Micro L3 Container*/
+
+.album-art {
+    float: left;
+    width: 65%;
+    padding-right: 20px;
+}
+
+
+/******* Level 3 *********/
+
+
+/*Micro L3 Container*/
+
+.score-box {
+    float: left;
+    width: 30%;
+    padding: 40px 0;
+}
+
+
+/*Micro L3 Container*/
+
+.score-circle {
+    position: relative;
+    color: #2b2b2b;
+    border: .5em solid #2b2b2b;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+}
+
+
+/*Micro L3 Container*/
+
+.score {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 24%;
+    left: 22%;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+
+/******* Level 2 *********/
+
+
+/*Micro L2 PARENT Container*/
+
+.review-body {
+    padding-bottom: 70px;
+}
+
+
+/******* Level 4 *********/
+
+
+/*PARENT Container for the author details*/
+
+ul.authors-detail {
+    display: inline;
+}
+
+
+/*Container for each of the author details*/
+
+.authors-detail li.author {
+    display: inline;
+}
+
+
+/*Hide author titles on mobile screens*/
+
+li.author-title {
+    display: none;
+}
+
+
+/*publish date and time*/
+
+.pub-date {}
+
+
+/*inserts aforward slash before the publish date*/
+
+.review-body .pub-date:before {
+    display: inline-block;
+    content: "/";
+    margin: 0 5px;
+}
+
+
+/*hides the listed social icons at mobile level*/
+
+.share-module {
+    display: none;
+}
+
+
+/******* Level 3 *********/
+
+
+/*Micro L3 PARENT Container*/
+
+.article-content {}
+
+
+/*Micro L3 PARENT Container*/
+
+.article-content p {
+    line-height: 1.875em;
+    font
+}
+
+
+/******* Level 2 *********/
+
+
+/*Micro L2 PARENT Container*/
+
+aside.review-related {
+    padding: 45px 0 30px;
+    border-top: 1px solid #ddd;
+}
+
+
+/******* Level 3 *********/
+
+
+/*Micro L3 Container*/
+
+aside.review-related {
+    width: 100%;
+}
+
+
+/*Micro L4 Container*/
+
+.related-albums {
+    width: 100%;
+}
+
+
+/*Micro L4 Component*/
+
+h2.page-title {
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 40px;
+}
+
+span.label-artist {
+    display: block;
+}
+
+
+/*wrapping container for the album rows*/
+
+.album-row-wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.artwork-cover {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.details {
+    flex: 2;
+}
+
+
+/*Micro L5 Component*/
+
+h2.album-title {
+    color: #2b2b2b;
+    font-size: 25px;
+    line-height: 28px;
+}
+
+.related-albums-list .authors {
+    padding: 0;
+}
+
+.related-albums-list .authors .display-name {
+    color: #2b2b2b;
+}
+
+.related-albums-list .abstract {
+    padding-top: 15px;
+}
+
+
+/* -----------------------------------------------
+PAGE: REVIEWS DETAIL PAGE | RES: TABLET (768px)
+-----------------------------------------------*/
+
+@media (min-width: 768px) {
+    /*Wrapping container for the whole article*/
+    .article-wrapper {
+        padding-top: 60px;
+    }
+    /******************************************/
+    /*Container for catogory and share button*/
+    .mobile-header {
+        display: none;
+    }
+    /******************************************/
+    /*Wrapper for the Tombstone*/
+    .album-tombstone hgroup {
+        margin-bottom: 40px;
+    }
+    /*Wrapper for album cover*/
+    .album-art {
+        margin-left: 16%;
+        width: 40%;
+    }
+    /*Wrapper for the Score circle*/
+    .score-box {
+        padding: 60px 0 85px 30px;
+    }
+    /*Score Circle diameter*/
+    .score-circle {
+        width: 135px;
+        height: 135px;
+    }
+    /*Adjusts the postion of the score number inside*/
+    .score {
+        top: 22%;
+        left: 22%;
+        font-size: 50px;
+    }
+    
+    
+    .article-wrap {
+    display: flex;
+    padding-top: 30px;
+    }
+    
+    .article-meta {
+        flex: 1;
+        padding-top: 0;
+        
+    }
+    
+    .article-content {
+        flex: 3;
+        padding-top: 15px
+    }
+    
+    
+    /*Score Circle diameter*/
+    ul.authors-detail {
+        display: block;
+        margin-bottom: 5px;
+    }
+    li.author-title {
+        display: block;
+    }
+   
+    /*container for the social icons*/
+    .share-module {
+        display: block;
+    }
+    .icon-wrapper {
+        border: 1px #aaa solid;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 10px 0;
+    }
+    .icon-wrapper .fa-facebook {
+        position: absolute;
+        top: 11px;
+        left: 14px;
+    }
+    .icon-wrapper .fa-twitter {
+        position: absolute;
+        top: 11px;
+        left: 11px;
+    }
+    .fa-ellipsis-h {
+        position: absolute;
+        top: 11px;
+        left: 13px;
+    }
+
+    /************* Changes to the related albums section *************/
+    span.label-artist {
+        display: inline;
+    }
+    
+    h2.page-title {
+    font-size: 18px;
+    padding-bottom: 60px;
+    }
+    
+    /*Changes to the "More album reviews"*/
+    
+    .related-albums-list {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .album-rows {
+    flex-basis: 47%;
+    }
+    
+}
+
+
+/*-----------------------------------------------------
+END OF TABLET CHANGES FOR PAGE: REVIEW ARTICLE
+--------------------------------------------------------*/
+
+
+/*----------------------------------------------------
+PAGE: REVIEWS DETAIL PAGE STYLES | RES: DESKTOP (940px)
+-----------------------------------------------------*/
+
+@media (min-width: 940px) {
+    
+    /**********Tombstone Section************/
+    .album-tombstone {
+        background-color: white;
+        padding: 20px 0 40px;
+        
+    }
+    .album-tombstone hgroup {
+        float: left;
+        width: 45%;
+        margin: 50px 0 0;
+    }
+    h2.label {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    h1.album-name {
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 55px;
+        font-style: italic;
+    }
+    .album-art {
+        margin-left: 0;
+        float: left;
+        width: 25%;
+    }
+    .score-box {
+        padding: 35px 0 45px 30px;
+    }
+    
+    .article-wrap {
+        max-width: 890px;
+        margin: 0 auto;
+    }
+    
+    .article-meta {
+        flex: 1;
+        padding-top: 0;
+    }
+    
+    .article-content {
+        flex: 3;
+        padding-top: 15px;
+        max-width: 600px;
+    }
+    
+
+    /**********Related Albums Section************/
+   
+    .related-albums-list {
+    max-width: 850px;
+    margin: 0 auto;
+    }
+    
+    .album-rows {
+    flex-basis: 45%;
+    }
+    
+}
+
+
+/* -----------------------------------------------
+END OF DESKTOP MEDIA QUERY FOR REVIEW DETAIL ARTICLE
+--------------------------------------------------*/
+
+
+/*------------------------
+START OF THE EVENTS PAGE
+-------------------------*/
+
+
+/*--------------------------------------------------
+PAGE: EVENTS | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+
+/*-----------------------------------------------
+        SECTION: "SEARCH EVENT HEADER"
+        ----------------------------------------------- */
+
+
+/*Outer PARENT Container for the events search component*/
+
+.event-search-header {
+    background-image: url(../img/events-img/discoverBG.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 400px;
+    position: relative;
+}
+
+    .overlay {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+
+
+/*container for the title heading and search box*/
+
+.event-title-search {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+
+/*title heading class*/
+
+.event-heading {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 110%;
+    margin: 15px 0;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+
+
+/*container for the search box*/
+
+.search-box {
+    margin: 15px 10px 0;
+}
+
+
+/*container for the search box*/
+
+.search-label {
+    background-color: #fff;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, .15);
+    color: #8f92a5;
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 14px;
+}
+
+
+/*container for the search box*/
+
+.fa.search-icon {
+    width: 40px;
+    height: 40px;
+    float: right;
+    background-color: #8869b8;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+/*-----------------------------------------------
+        SECTION: "WHATS HOT"
+        ----------------------------------------------- */
+
+
+/*Outer PARENT Container for the 'what's hot' component*/
+
+section.hot-event-outer-wrap {
+    background-color: #fff;
+    padding: 20px 0 40px;
+}
+
+
+/*Targets the 'What's hot heading'*/
+
+.hot-heading {
+    text-align: center;
+    margin: 20px 20px 30px;
+    color: #2b2b2b;
+    font-size: 27px;
+}
+
+
+/*Targets the hot event image*/
+
+.hot-event-img {
+    display: block;
+    width: 100%;
+}
+
+
+/*Targets the hot event image*/
+
+.hot-event-title {
+    text-align: center;
+    color: #2b2b2b;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 25px 0 15px;
+}
+
+
+/*Targets the hot event description*/
+
+.hot-event-description {
+    color: #2b2b2b;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+
+/*Targets the hot event dates*/
+
+.hot-event-dates {
+    margin-top: 20px;
+    color: red;
+    line-height: 170%;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+/*Targets the more info link*/
+
+.event-item-link {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+/*adds an arrow after the more info link*/
+
+.event-item-link:after {
+    color: #ff3530;
+    display: inline-block;
+    /* vertical-align: middle; */
+    margin-left: .4em;
+    content: " \2192";
+}
+
+
+/*-----------------------------------------------
+        SECTION: "FEATURED EVENTS"
+        ----------------------------------------------- */
+
+
+/*Outer PARENT Container for the 'featured events' component*/
+
+section.featured-events {
+    background-color: #eee;
+    padding: 20px 0 60px;
+}
+
+
+/*Targets the 'Featured Event Heading'*/
+
+.featured-event-heading {
+    color: #2b2b2b;
+    text-align: center;
+    margin: 20px 20px 30px;
+    font-size: 27px;
+}
+
+
+/*Inner Parent wrapper for all of the event cards*/
+
+.event-cards-wrap {
+    width: 100%;
+}
+
+
+/*Targets the container for each individual event card*/
+
+.event-card {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+
+/*Targets the container for card image*/
+
+.event-card-image {}
+
+
+/*Targets the wrapping container for event info*/
+
+.event-info {
+    background-color: #fff;
+    padding: 20px 25px 65px;
+}
+
+
+/*Headline for each card event*/
+
+.event-info-heading {
+    color: #2b2b2b;
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+/*wrapper for the date location*/
+
+.event-date-location {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+/*wrapper for the event headliners*/
+
+.event-headliners {
+    line-height: 150%;
+    margin-bottom: 10px;
+}
+
+
+/*styles for the headliners*/
+
+span.headliner {
+    color: #8282a1;
+    font-size: 17px;
+}
+
+
+/*wrapper for the "more info" button*/
+
+.event-card-action {
+    font-size: 17px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: #2b2b2b;
+}
+
+
+/*chevron icon next to more info button*/
+
+.fa.fa-chevron-right {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+
+/*Wrapping container for the 'All Events' button*/
+
+.events-button {
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+/*All events button class*/
+
+.button-outline {
+    font-size: 16px;
+    font-weight: 700;
+    border: 3px purple solid;
+    padding: 10px 30px;
+    color: purple;
+    text-transform: uppercase;
+}
+
+
+/*-----------------------------------------------
+        SECTION: "PROMOTE YOUR EVENT"
+        ----------------------------------------------- */
+
+
+/*Outer PARENT Container for the 'promote your event' component*/
+
+section.self-promo {
+    background: #f9dd52; /* Old browsers */
+    background-image: url('../img/events-img/self-promo.jpg'), linear-gradient(to bottom, #f9dd52 0%,#f79621 100%);
+    background-image: url('../img/events-img/self-promo.jpg'), -moz-linear-gradient(to bottom, #f9dd52 0%,#f79621 100%);
+    background-image: url('../img/events-img/self-promo.jpg'), -webkit-linear-gradient(to bottom, #f9dd52 0%,#f79621 100%);
+    background-position: right top;
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section.self-promo .button-outline {
+    border: 3px white solid;
+    color: white;
+}
+
+
+/*Inner Parent container for the all info inside the event promo*/
+
+.self-promo-inner {
+    background: rgba(0, 0, 0, .6);
+    border: 1px solid #000;
+    padding: 20px 20px 50px;
+    text-align: center;
+    max-width: 500px;
+    z-index: 2;
+}
+
+
+/*targets the heading inside the self promo add*/
+
+.self-promo-heading {
+    font-size: 45px;
+    line-height: 45px;
+    color: #fff;
+    font-weight: 900;
+     text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+
+.self-promo-blurb {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+
+
+/*Wrapping container for the 'All Events' button*/
+
+.events-button {
+    text-align: center;
+}
+
+
+
+
+
+/*-----------------------------------------------
+        SECTION: "NEW & UPCOMING EVENTS"
+        ----------------------------------------------- */
+
+
+/*Outer PARENT Container for the 'new events' component*/
+
+section.new-events {
+    background-color: #fff;
+    padding: 30px 0 80px;
+}
+
+
+/*Targets the 'New Events Heading' wrapping container*/
+
+.new-events-heading {
+    text-align: center;
+    margin: 20px 20px 50px;
+    font-size: 35px;
+    color: #2b2b2b;
+}
+
+
+/*Targets the wrapping container for each new event listing*/
+
+.new-event-listing {
+    border-top: 1px #bbb solid;
+    padding: 40px 0;
+    display: inline-block;
+}
+
+
+/*Targets the wrapping container new events images*/
+
+.new-events-img {
+    float: left;
+    width: 40%;
+    margin-right: 25px;
+}
+
+
+/*Targets the wrapping container new events info*/
+
+.new-events-info {
+    float: left;
+    width: 50%;
+}
+
+
+/*Targets the new events date*/
+
+.new-events-date {
+    color: #2b2b2b;
+    font-size: 16px;
+}
+
+
+/*Targets the new events event title*/
+
+.new-events-title {
+    color: #2b2b2b;
+    font-size: 18px;
+}
+
+
+/*Hides the supporting text on a mobile*/
+
+.new-events-info div.abstract {
+    display: none;
+}
+
+
+/* -----------------------------------------------
+PAGE: EVENTS PAGE | RES: TABLET (768px)
+-----------------------------------------------*/
+
+@media (min-width: 768px) {
+    /*-----------------------------------------------
+    SECTION: "SEARCH EVENT HEADER"
+    ----------------------------------------------- */
+    /*Targets the hero PARENT search container*/
+    .event-search-header {
+        margin-top: 0;
+        height: 500px;
+    }
+    
+    .event-heading {
+        font-size: 45px;
+        line-height: 120%;
+    }
+    
+    .search-label {
+        line-height: 50px;
+        max-width: 600px;
+        text-align: left;
+        padding-left: 30px;
+        font-size: 17px;
+        color: #37373b;
+    }
+    
+    .fa.search-icon {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+
+    /*-----------------------------------------------
+    SECTION: "WHATS HOT"
+    ----------------------------------------------- */
+    section.hot-event-outer-wrap {
+        overflow: auto;
+        padding-bottom: 80px;
+    }
+    .hot-heading {
+        margin-bottom: 40px;
+        font-size: 35px;
+    }
+    /*Targets the link class that has the image placed on it*/
+    .hot-event-img {
+        height: 300px;
+        float: left;
+        width: 50%;
+        margin-top: 15px;
+    }
+    .hot-event-info {
+        float: left;
+        width: 40%;
+        margin-left: 60px;
+    }
+    .hot-event-title {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 35px;
+        margin: 0;
+    }
+    /*-----------------------------------------------
+    SECTION: "FEATURED EVENTS"
+    ----------------------------------------------- */
+    /*PARENT Container*/
+    section.featured-events {
+        overflow: auto;
+    }
+    
+    .featured-event-heading {
+    font-size: 35px;
+    margin-bottom: 50px;
+    }
+    
+    /*Parent container that holds all of the event cards*/
+    .event-cards-wrap {
+        overflow: auto;
+    }
+    /*Wrapper for each of the event cards*/
+    .event-card {
+        float: left;
+        width: 44%;
+        margin: 0 20px 40px;
+    }
+    .event-card:nth-of-type(9) {
+        display: none;
+    }
+    /*Wrapper for all of the info inside the event cards*/
+    .event-info {
+        height: 250px;
+    }
+    /*Wrapper for the events button*/
+    .events-button {
+        margin: 50px 0 30px;
+    }
+    
+    .button-outline {
+    font-size: 17px;
+    font-weight: 700;
+    
+    padding: 15px 50px;
+    }
+    
+    /*-----------------------------------------------
+    SECTION: "PROMOTE YOUR EVENT"
+    ------------------------------------------------- */
+    
+    section.self-promo {
+    background-position: right top;
+    }
+    
+    /*Inner Parent container for the all info inside the event promo*/
+
+    .self-promo-inner {
+        margin: 0 auto;
+        padding: 40px 50px 80px;
+        max-width: 600px;
+    }
+
+    .self-promo-heading {
+    font-size: 50px;
+    }
+
+    
+    /*Inner Parent container for the all info inside the event promo*/
+    
+    .self-promo .button-outline {
+        border: 3px white solid;
+        color: #fff;
+    }
+    
+
+    /*-----------------------------------------------
+    SECTION: "NEW & UPCOMING EVENTS"
+    ------------------------------------------------- */
+    /*Targets the wrapper for the supporting new events text*/
+    section.new-events .abstract {
+        color: #2b2b2b;
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-size: 18px;
+    }
+    
+    .new-events-title {
+        font-size: 25px;
+    }
+}
+
+
+/* -------------------------------------------------
+END OF TABLET MEDIA QUERY CHANGES FOR THE EVENTS PAGE
+----------------------------------------------------*/
+
+
+/* -----------------------------------------------
+PAGE: EVENTS PAGE | RES: DESKTOP (940px)
+-----------------------------------------------*/
+
+@media (min-width: 940px) {
+    
+    /*-----------------------------------------------
+    SECTION: "WHATS HOT"
+    ----------------------------------------------- */
+    .hot-event-info {
+        float: left;
+        width: 40%;
+        margin-top: 40px;
+        margin-left: 60px;
+    }
+
+    
+    
+    /*-----------------------------------------------
+    SECTION: "FEATURED EVENTS"
+    ----------------------------------------------- */
+    /*Wrapper for each of the event cards*/
+    .event-card {
+        float: left;
+        width: 28%;
+    }
+    .event-card:nth-of-type(9) {
+        display: block;
+    }
+    
+     /*-----------------------------------------------
+    SECTION: "NEW & UPCOMING EVENTS"
+    ----------------------------------------------- */
+    
+    .new-events-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .new-events-row {
+        flex-basis: 50%;
+        padding: 0 30px;
+    }
+    
+    .new-event-listing {
+        display: flex;
+        flex: 1;
+    }
+    
+    .new-events-img {
+        float: none;
+        width: auto;
+        margin-right: 25px;
+        flex: 1;
+    }
+    
+    .new-events-info {
+        float: none;
+        width: auto;
+        flex: 2;
+    }
+}
+
+
+/* -------------------------------------------------
+END OF DESKTOP MEDIA QUERY CHANGES FOR THE EVENTS PAGE
+----------------------------------------------------*/
+
+
+/*------------------------
+START OF THE ABOUT PAGE
+-------------------------*/
+
+
+/*--------------------------------------------------
+PAGE: 'ABOUT' | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+/* -----------------------------------------------
+SECTION: MASTHEAD
+----------------------------------------------- */
+
+
+/*PARENT Wrapping container for the masthead*/
+
+.masthead {
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+/*Wrapping container for the masthead title*/
+
+.masthead-title {
+    width: 100%;
+    color: #2b2b2b;
+    font-size: 17px;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 10px;
+}
+
+
+/* -----------------------------------------------
+        SECTION: META
+        ----------------------------------------------- */
+
+
+/*PARENT Wrapping container for the meta section
+        below the masthead*/
+
+.meta {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+/*Wrapping Container for the social links up top*/
+
+.meta-social-links {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.meta-social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.meta-social-links li .fa {
+    font-size: 30px;
+    color: #2b2b2b;
+}
+
+
+/*Wrapping Container for the author information up top*/
+
+.meta-author {
+    width: 100%;
+}
+
+
+/* -----------------------------------------------
+        SECTION: ABOUT
+        ----------------------------------------------- */
+
+
+/*PARENT Wrapping container for the about section*/
+
+.about {
+    width: 100%;
+}
+
+
+/* -----------------------------------------------
+        SECTION: ABOUT DESCRIPTION
+        ----------------------------------------------- */
+
+
+/*Inner wrapping container for the actual about content*/
+
+.about-content {
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/*Inner wrapping container for the leading bolded paragraph*/
+
+.about-content .lead {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about-content a {
+    color: #2b2b2b;
+    padding-bottom: 0px;
+    border-bottom: 1px #8F8F8F solid;
+    line-height: 32px;
+}
+
+
+
+
+/* -----------------------------------------------
+        SECTION: ABOUT TEAM
+        ----------------------------------------------- */
+
+
+/*Inner wrapping container for the team members section*/
+
+.about-team {
+    background-color: #eee;
+    padding: 30px 0;
+    margin: 50px 0 0;
+    width: 100%;
+    overflow: auto;
+}
+
+
+/*Targets the section heading "meet the team"*/
+
+.about-team h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 10px 20px 40px;
+    color: #2b2b2b;
+    font-size: 27px;
+}
+
+
+/*Wrapping container for each department*/
+
+.department {
+    margin-bottom: 60px;
+}
+
+
+/*Targets the headings for each department*/
+
+.about-team h2,
+.about-team h3 {
+    text-align: center;
+}
+
+.about-team h3 {
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/*Wrapping container for the team members in each department*/
+
+.people {
+    max-width: 250px;
+    margin: 0px auto;
+}
+
+
+/*Wrapping container for the details od each employee*/
+
+.employee {
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    padding: 15px 0;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    /*            background-color: aqua;*/
+}
+
+
+/*wrapping container for each employee image*/
+
+.employee img {
+    flex: 1;
+    border-radius: 50%;
+    height: 35%;
+    width: 35%;
+}
+
+
+/*wrapping container for each employee name and job title*/
+
+.employee-name {
+    margin-left: 30px;
+    flex: 2;
+}
+
+.employee-name dt {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+/*--------------------------------------------------
+PAGE: 'ABOUT' | RES: TABLET (768px)
+--------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* -----------------------------------------------
+    SECTION: MASTHEAD
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the masthead*/
+    .masthead {
+        margin: 60px 0 30px;
+    }
+    /* -----------------------------------------------
+    SECTION: META
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the meta section
+    below the masthead*/
+    .meta-inner {
+        width: 20%;
+        float: left;
+        margin-top: 12px;
+        margin-right: 40px;
+    }
+    /* -----------------------------------------------
+    SECTION: ABOUT
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the about section*/
+    .about {
+        margin-top: 0;
+    }
+    /* -----------------------------------------------
+    SECTION: ABOUT DESCRIPTION
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the inner about content section*/
+    .about-content {
+        width: 70%;
+        float: left;
+        padding-bottom: 70px;
+    }
+    /* -----------------------------------------------
+    SECTION: ABOUT TEAM
+    ----------------------------------------------- */
+    /*Inner wrapping container for the team members section*/
+    .about-team {
+        padding: 40px 0 80px;
+    }
+    /* -----------------------------------------------
+    SECTION: ABOUT TEAM
+    ----------------------------------------------- */
+    /*Inner wrapping container for the team members section*/
+    .departments-wrap {
+        max-width: 600px;
+        /*    background-color: aqua;*/
+        overflow: auto;
+        margin: auto;
+    }
+    /*Wrapping container for each department*/
+    .department {
+        float: left;
+        width: 40%;
+        margin: 30px;
+    }
+    
+    .employee img {
+        margin-left: 10px;
+    }
+}
+
+
+/* -------------------------------------------------
+END OF TABLET MEDIA QUERY CHANGES FOR THE ABOUT PAGE
+----------------------------------------------------*/
+
+
+/*--------------------------------------------------
+PAGE: 'ABOUT' | RES: DESKTOP (940px)
+--------------------------------------------------- */
+
+@media (min-width: 940px) {
+    /* -----------------------------------------------
+    SECTION: META
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the meta section below the masthead*/
+    .meta-inner {
+        width: 14%;
+    }
+    /* -----------------------------------------------
+    SECTION: ABOUT DESCRIPTION
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the inner about content section*/
+    .about-content {
+        max-width: 600px;
+        margin-left: 40px;
+    }
+    
+    /* -----------------------------------------------
+    SECTION: ABOUT TEAM
+    ----------------------------------------------- */
+    
+    .about-team h2 {
+        font-size: 35px;
+    }
+    
+    /*Inner wrapping container for the team members section*/
+    .departments-wrap {
+        max-width: 800px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    /*Wrapping container for each department*/
+    .department {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 30px;
+    }
+    
+    .people {
+        max-width: 100%;
+    }
+    
+    .employee img {
+        margin-left: 40px;
+    }
+}
+
+
+/* -------------------------------------------------
+END OF DESKTOP MEDIA QUERY CHANGES FOR THE ABOUT PAGE
+----------------------------------------------------*/
+
+@media (min-width: 1400px) {
+
+    /* -----------------------------------------------
+    SECTION: ABOUT DESCRIPTION
+    ----------------------------------------------- */
+    /*PARENT Wrapping container for the inner about content section*/
+    .about-content {
+        margin-left: 100px;
+    }
+    
+}
+
+
+/*------------------------
+START OF THE CONTACT PAGE
+-------------------------*/
+
+
+/*--------------------------------------------------
+PAGE: CONTACT  | RES: MOBILE (320px)
+--------------------------------------------------- */
+
+
+/* -----------------------------------------------
+        SECTION: MASTHEAD
+        ----------------------------------------------- */
+
+
+/*Classes for Masthead and Meta are the same as 
+        those used on the About page*/
+
+
+/* -----------------------------------------------
+        SECTION: META
+        ----------------------------------------------- */
+
+
+/* -----------------------------------------------
+        SECTION: CONTACT-CONTENT
+        ----------------------------------------------- */
+
+
+/*global class added to all of the services*/
+
+.contact {
+    padding-bottom: 50px;
+}
+
+.service {
+    margin: 20px 0 40px;
+}
+
+.service h2 {
+    color: #2b2b2b;
+}
+
+.contact-content a {
+    color: #2b2b2b;
+    padding-bottom: 0px;
+    border-bottom: 1px #8F8F8F solid;
+    line-height: 32px;
+}
+
+
+/*--------------------------------------------------
+PAGE: 'CONTACT' | RES: TABLET (768px)
+--------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* -----------------------------------------------
+    SECTION: CONTACT
+    ----------------------------------------------- */
+    /*PARENT Container for the contact section*/
+    .contact {
+        padding-bottom: 60px;
+    }
+    /*Inner PARENT Container that houses all of contact service departments*/
+    .contact-content {
+        float: left;
+        width: 70%;
+        max-width: 600px;
+        margin-top: 10px;
+    }
+    
+    .service {
+    margin-bottom: 60px;
+    }
+    
+    /*Targets just the customer service block group*/
+    .service.customer-services {
+        margin-top: -5px;
+    }
+}
+
+
+/*--------------------------------------------------
+PAGE: 'CONTACT' | RES: DESKTOP (940px)
+--------------------------------------------------- */
+
+@media (min-width: 940px) {
+    
+    /* -----------------------------------------------
+    SECTION: CONTACT
+    ----------------------------------------------- */
+
+    /*Inner PARENT Container that houses all of contact service departments*/
+    .contact-content {
+        margin-left: 20px;
+    }
+    
+}
+
+/*--------------------------------------------------
+PAGE: 'CONTACT' | RES: LARGE DESKTOP (1440px)
+--------------------------------------------------- */
+
+@media (min-width: 1440px) {
+    
+    /* -----------------------------------------------
+    SECTION: CONTACT
+    ----------------------------------------------- */
+
+    /*Inner PARENT Container that houses all of contact service departments*/
+    .contact-content {
+        margin-left: 90px;
+    }
+    
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
